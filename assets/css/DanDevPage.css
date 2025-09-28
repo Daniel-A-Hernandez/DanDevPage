@@ -24,7 +24,9 @@
     box-sizing: border-box;
 }
 body{
+    background-color: var(--bgSecundario);
     overflow: hidden;
+    height: 400vh;
 }
 
 /*Loader Styles*/
@@ -103,5 +105,31 @@ body{
     100%{opacity: 0; display:none; visibility:hidden;}
 }
 
-/*Loader Fin*/
+/*Loader End*/
     
+/* HEADER*/
+
+.head{
+    background-color: rgb(255, 255, 255);
+    color: var(--txtColorOscuro);
+    font-family: var(--fontTitle);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.125rem;
+    position: fixed;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+    transition-property: background,color;
+    transition-timing-function: ease-in-out;
+    z-index: 0;   
+}
+.head.scrolled{     /*add class to js*/
+    background-color: var(--bgPrincipal);
+    color: var(--txtColorClaro);
+}
+
+/*Header End*/
