@@ -26,7 +26,9 @@
 body{
     background-color: var(--bgSecundario);
     overflow: hidden;
+    scrollbar-width: none;
     height: 400vh;
+    z-index: 0;
 }
 
 /*Loader Styles*/
@@ -133,3 +135,30 @@ body{
 }
 
 /*Header End*/
+
+/*Main Context fixed*/
+
+.initial-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 70vh;
+    margin-top: 8vh;
+    position: fixed;
+}
+.mainText{
+    position: fixed;
+    font-family: var(--fontTitle);
+    color: var(--txtColorOscuro);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0% 5% 0% 5%;
+    
+}
+.arrowDown{
+    width: 8rem;
+    height: auto;
+    margin-top:85%       
+}
