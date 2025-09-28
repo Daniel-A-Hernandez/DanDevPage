@@ -23,4 +23,85 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow: hidden;
+}
 
+/*Loader Styles*/
+.background_loader{
+    background-color: var(--bgPrincipal);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    text-align: center;
+    opacity: 1;
+    z-index: 100;
+    overflow: hidden;
+    animation: desband_loader 3.5s ease-in forwards;
+}
+.dan, .dev{
+    color: var(--txtColorClaro);
+    font-family: var(--fontTitle);
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.50rem;
+}
+.dev{
+    color: #AD49C6;
+    animation: change_color_dev 1.5s ease-in-out;
+    
+}
+
+.line_loader{
+    background-color: var(--txtColorClaro);
+    width:90vw;
+    margin: auto;
+    height:5px;
+    border-radius: 10%;
+    transform-origin:center ;
+    animation: run_line 2.2s forwards;
+}
+.code, .by_daniel{
+    font-family: var(--fontLogo);
+    font-size: 3rem;
+    font-weight: 700;
+}
+.code{
+    color: #7b7be0;
+    animation: change_color_code 2.2s ease-in-out;
+
+}
+.by_daniel{
+    color: #6ddc5c;
+    animation: change_color_bydaniel 2.2s ease-in-out;
+
+}
+
+ /*Animations Loader*/
+
+@keyframes change_color_dev {
+    from{color: var(--txtColorClaro);}
+    to{color: #AD49C6;}
+    
+}
+@keyframes run_line {
+     from{width: 0;} 
+     to { width: 80vw; } 
+}
+@keyframes change_color_code { 
+    from{color:#ffffff;}
+    to{color: rgb(123, 123, 224);} 
+}
+@keyframes change_color_bydaniel{
+    from{color:var(--txtColorClaro);}
+    to{color: rgb(109, 220, 92);} 
+}
+@keyframes desband_loader { 
+    0%{opacity: 1;} 
+    80%{opacity: 1;} 
+    100%{opacity: 0; display:none; visibility:hidden;}
+}
+
+/*Loader Fin*/
+    
