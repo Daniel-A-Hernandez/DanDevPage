@@ -27,7 +27,7 @@ body{
     background-color: var(--bgSecundario);
     overflow: hidden;
     scrollbar-width: none;
-    height: 400vh;
+    height: 300vh;
     z-index: 0;
 }
 
@@ -127,11 +127,12 @@ body{
     transition-duration: .5s;
     transition-property: background,color;
     transition-timing-function: ease-in-out;
-    z-index: 0;   
+    z-index: 1;   
 }
 .head.scrolled{     /*add class to js*/
     background-color: var(--bgPrincipal);
     color: var(--txtColorClaro);
+    z-index: 1;
 }
 
 /*Header End*/
@@ -162,3 +163,38 @@ body{
     height: auto;
     margin-top:85%       
 }
+
+/*Main Context fixed End*/
+
+
+/*Content sections container*/
+.push_content{
+    height: 80vh;
+}
+.scroll-container {
+    display: flex;
+    flex-direction: column; 
+    scroll-snap-type: y mandatory; 
+    overflow-y: scroll; 
+    height: calc(100vh * 3); 
+}
+.section{
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: start; 
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.aboutme{
+    background-color: var(--bgPrincipal);
+}
+
+.skills{
+    background-color: var(--colorPrimario);
+}
+.proyects{
+    background-color: var(--colorSecundario);
+}
+

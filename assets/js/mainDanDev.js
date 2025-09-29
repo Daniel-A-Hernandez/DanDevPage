@@ -27,3 +27,44 @@ window.addEventListener('scroll', ()=>{
     }
 
 })
+
+//Opacity 0 - 1 text
+
+//Element to desband or view
+const maintext = document.querySelector('.mainText')
+
+const opacity_negative = false
+const opacity_positive = true
+window.addEventListener('scroll', ()=>{
+    
+    const factor = 0.18
+    const scrollTop = window.scrollY
+    const TotalHeight = document.body.scrollHeight - window.innerHeight
+
+    const progress = scrollTop / TotalHeight
+
+    if(opacity_positive == true){
+        
+        const opacity_text = 1 - (scrollTop / TotalHeight) / factor
+        
+        maintext.style.opacity = Math.max(0, Math.min(1, opacity_text))
+
+
+    }
+
+    if (opacity_negative == false){
+        const opacity_text_negative = (scrollTop / TotalHeight) / factor
+    
+
+    }
+        
+    
+
+
+
+
+
+
+
+    
+})
