@@ -161,13 +161,20 @@ body{
 .arrowDown{
     width: 8rem;
     height: auto;
-    margin-top:85%       
+    margin-top:85%;
+    animation: moveDown 1s infinite alternate ease-in-out;
+
+}
+
+@keyframes moveDown{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(2.5vh);}
 }
 
 /*Main Context fixed End*/
 
 
-/*Content sections container*/
+/*Content sections container styles*/
 .push_content{
     height: 80vh;
 }
@@ -176,7 +183,8 @@ body{
     flex-direction: column; 
     scroll-snap-type: y mandatory; 
     overflow-y: scroll; 
-    height: calc(100vh * 3); 
+    height: calc(100vh * 3);
+    position: relative;
 }
 .section{
     height: 100vh;
@@ -186,11 +194,138 @@ body{
     justify-content: center;
     z-index: 0;
 }
+/*Style sections End*/
 
+/*About me section*/
 .aboutme{
     background-color: var(--bgPrincipal);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    padding-top: 5%;
+}
+.sobre-mi,.develop{
+    position: relative;
+    margin: 0;
+    font-family: var(--fontTitle);
+    color: var(--txtColorClaro);
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    
+}
+.develop{
+    position: absolute;
+    opacity: 0;
+}
+.profile-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 30vh;
+    gap: 2rem;
 }
 
+.profile-pic{
+    position: relative;
+    margin-top:10%;
+    width: 15vh;
+    height: auto;
+    transition: transform 1s ease-out;
+    transform: translateX(0);
+    box-shadow: 0.375rem 0.4375rem 0 var(--colorPrimario);
+}
+.profile-pic.move-left {
+    transform: translateX(-33vw); /* ajusta el valor */
+}
+.info-aboutme1{
+    color: var(--txtColorClaro);
+    font-family: var(--fontText);
+    line-height: 2rem;
+    position: relative;
+    top: -25vh;
+    font-size: 1.2rem;
+    text-align:justify;
+    width: 60vw;
+    margin-right:-35vw;
+    opacity: 0;
+    transition: opacity .5s ease-out;   
+   
+ }
+
+.info-aboutme1.visible{opacity: 1;}
+
+.links-contact{
+    width: 95vw;
+}
+
+.logo, a {
+    width: 4vh;
+    margin-top: -0.5vh;
+    margin-left: 0.5vw;
+    transition: opacity 3.5s ease-in-out;   
+}
+.logo{
+    opacity: 0;
+}
+.logo.google.visible{opacity: 1;}
+.logo.github.visible{opacity: 1;}
+.logo.linkedin.visible{opacity: 1;}
+
+.mis-intereses-container{
+    width: 100vw;
+    height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    font-family: var(--fontTitle);
+    color: var(--txtColorClaro);
+    
+}
+.mis-intereses-title{
+    font-weight: 800;
+    width: 60vw;
+    font-size: 2rem;
+    margin-bottom: 3vh;
+    margin-right: 80vh;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorPrimario);
+    box-shadow: 0.375rem 0.4375rem 0 var(--colorSecundario);
+    transition: opcity 3s ease-in-out;
+    transition: transform 1s ease-out;
+    transform: translateX(0);
+    
+}
+.mis-intereses-title.topVisible{
+    transform: translateX(40vh);
+    opacity: 1; /* ajusta el valor */
+    
+} 
+.info-aboutme2{
+    width: 90vw;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 2;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;   
+
+}
+.info-aboutme2.visible{
+   opacity: 1;
+}
+
+/*About me section End*/
+
+
+/*Skills section*/
 .skills{
     background-color: var(--colorPrimario);
 }

@@ -16,7 +16,6 @@ window.onload = function () {
 
 //Header Animation
 
-
 const header = document.querySelector('.head')
 window.addEventListener('scroll', ()=>{
     if(window.scrollY > 20){
@@ -27,44 +26,84 @@ window.addEventListener('scroll', ()=>{
     }
 
 })
+//END
 
-//Opacity 0 - 1 text
 
-//Element to desband or view
+//Element to desband or show
 const maintext = document.querySelector('.mainText')
+const sobre_mi = document.querySelector('.sobre-mi')
+const develop = document.querySelector('.develop')
 
 const opacity_negative = false
 const opacity_positive = true
-window.addEventListener('scroll', ()=>{
-    
+window.addEventListener('scroll', ()=>{    
     const factor = 0.18
     const scrollTop = window.scrollY
     const TotalHeight = document.body.scrollHeight - window.innerHeight
 
     const progress = scrollTop / TotalHeight
-
+    
     if(opacity_positive == true){
         
         const opacity_text = 1 - (scrollTop / TotalHeight) / factor
         
         maintext.style.opacity = Math.max(0, Math.min(1, opacity_text))
-
-
-    }
-
-    if (opacity_negative == false){
-        const opacity_text_negative = (scrollTop / TotalHeight) / factor
-    
-
-    }
+        sobre_mi.style.opacity = Math.max(0, Math.min(1, opacity_text))
         
-    
-
-
-
-
-
-
-
-    
+        if(opacity_text <= 0.5){
+            sobre_mi.style.opacity = 0
+            develop.style.opacity = 1
+            
+        }else{
+            sobre_mi.textContent = "Un poco sobre mí"
+            sobre_mi.style.opacity = Math.max(0, Math.min(1, opacity_text))
+            develop.style.opacity = 0
+        }
+        
+    }
+    if (opacity_negative == false){
+        
+        const opacity_text_negative = (scrollTop / TotalHeight) / factor   
+    }
 })
+//END
+
+//Transitions animation main content
+const logo_google = document.querySelector('.logo.google')
+const info_aboutme1 = document.querySelector('.info-aboutme1')
+const mis_intereses_title = document.querySelector('.mis-intereses-title')
+const info_aboutme2 = document.querySelector('.info-aboutme2')
+const github_logo = document.querySelector('.github')
+const linkedin_logo = document.querySelector('.linkedin')
+const profile_pic = document.querySelector('.profile-pic')
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            profile_pic.classList.add("move-left")
+            logo_google.classList.add("visible")
+            github_logo.classList.add("visible")
+            linkedin_logo.classList.add("visible")
+            info_aboutme1.classList.add("visible")
+            
+            info_aboutme2.classList.add("visible")
+            mis_intereses_title.classList.add("topVisible")
+
+        }else{
+            info_aboutme1.classList.remove("visible")
+            info_aboutme2.classList.remove("visible")
+            logo_google.classList.remove("visible")
+            github_logo.classList.remove("visible")
+            linkedin_logo.classList.remove("visible")
+            profile_pic.classList.remove("move-left")
+            mis_intereses_title.classList.remove("topVisible")
+        }
+    })
+}, {
+    threshold: 0.5 // el % de visibilidad necesario
+})
+observer.observe(profile_pic)
+document.querySelectorAll(".section").forEach(sec => observer.observe(sec));
+
+//END
