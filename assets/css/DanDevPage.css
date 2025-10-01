@@ -259,7 +259,9 @@ body{
 .info-aboutme1.visible{opacity: 1;}
 
 .links-contact{
+    display: flex;
     width: 95vw;
+    gap: 10vw;
 }
 
 .logo, a {
@@ -269,9 +271,8 @@ body{
     transition: opacity 3.5s ease-in-out;   
 }
 .logo{
-    opacity: 0;
+    opacity: 1;
 }
-.logo.google.visible{opacity: 1;}
 .logo.github.visible{opacity: 1;}
 .logo.linkedin.visible{opacity: 1;}
 
@@ -288,7 +289,7 @@ body{
     
 }
 .mis-intereses-title{
-    font-weight: 800;
+    font-weight: 900;
     width: 60vw;
     font-size: 2rem;
     margin-bottom: 3vh;
@@ -306,10 +307,10 @@ body{
 }
 .mis-intereses-title.topVisible{
     transform: translateX(40vh);
-    opacity: 1; /* ajusta el valor */
     
 } 
 .info-aboutme2{
+    font-family: var(--fontText);
     width: 90vw;
     text-align: justify;
     font-size: 1.2rem;
@@ -326,9 +327,84 @@ body{
 
 
 /*Skills section*/
-.skills{
-    background-color: var(--colorPrimario);
+.tecnology{
+    background-color: var(--bgPrincipal);
+    color: var(--txtColorClaro);
+    font-family: var(--fontTitle);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
+.title-tecnology-container{
+    margin-bottom:5vh;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opcity 3s ease-in-out;
+    transition: transform 1s ease-out;
+    transform: translateX(-70vw);
+    
+} 
+
+.tecnology-title{
+    background-color: var(--colorPrimario);
+    width: 60vw;
+    height: 10vh;
+    box-shadow: 0.375rem 0.4375rem 0 var(--colorSecundario);
+    font-size: 2rem;
+    font-weight:900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title-tecnology-container.topVisible2{
+    transform: translateX(0vw);
+    opacity:1;
+
+}
+
+
+
+.ico{
+    width: 12vw;
+    height: auto;
+
+}
+
+.lenguajes, .devop-tecnology, .tools-and-systems{
+    font-weight:600;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 20vh;
+
+}
+.file-devop-web, .file-tools, .file-lenguajes{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13vw;
+    margin-top:5vh;
+    margin-bottom:5vh;
+
+}
+
+
+
+
+
+
+
+/*Skills section End*/
+
 .proyects{
     background-color: var(--colorSecundario);
 }

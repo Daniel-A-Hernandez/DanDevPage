@@ -69,31 +69,30 @@ window.addEventListener('scroll', ()=>{
 //END
 
 //Transitions animation main content
-const logo_google = document.querySelector('.logo.google')
 const info_aboutme1 = document.querySelector('.info-aboutme1')
 const mis_intereses_title = document.querySelector('.mis-intereses-title')
 const info_aboutme2 = document.querySelector('.info-aboutme2')
 const github_logo = document.querySelector('.github')
 const linkedin_logo = document.querySelector('.linkedin')
 const profile_pic = document.querySelector('.profile-pic')
+const title_tecnology_container = document.querySelector('.title-tecnology-container')
 
-
+//Observer section aboutme
+const section_aboutme = document.querySelector(".section.aboutme")
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             profile_pic.classList.add("move-left")
-            logo_google.classList.add("visible")
             github_logo.classList.add("visible")
             linkedin_logo.classList.add("visible")
             info_aboutme1.classList.add("visible")
-            
+
             info_aboutme2.classList.add("visible")
             mis_intereses_title.classList.add("topVisible")
 
         }else{
             info_aboutme1.classList.remove("visible")
             info_aboutme2.classList.remove("visible")
-            logo_google.classList.remove("visible")
             github_logo.classList.remove("visible")
             linkedin_logo.classList.remove("visible")
             profile_pic.classList.remove("move-left")
@@ -104,6 +103,25 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.5 // el % de visibilidad necesario
 })
 observer.observe(profile_pic)
-document.querySelectorAll(".section").forEach(sec => observer.observe(sec));
+observer.observe(section_aboutme)
 
 //END
+
+
+//Observer section tecnology
+const section_tecnology = document.querySelector(".section.tecnology")
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+      
+            title_tecnology_container.classList.add("topVisible2")
+
+        }else{
+      
+            title_tecnology_container.classList.remove("topVisible2")
+        }
+    })
+}, {
+    threshold: 0.5   // el % de visibilidad necesario
+})
+observer2.observe(section_tecnology)
