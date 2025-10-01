@@ -62,7 +62,6 @@ body{
     width:90vw;
     margin: auto;
     height:5px;
-    border-radius: 10%;
     transform-origin:center ;
     animation: run_line 2.2s forwards;
 }
