@@ -77,6 +77,7 @@ const linkedin_logo = document.querySelector('.linkedin')
 const profile_pic = document.querySelector('.profile-pic')
 const title_tecnology_container = document.querySelector('.title-tecnology-container')
 
+
 //Observer section aboutme
 const section_aboutme = document.querySelector(".section.aboutme")
 const observer = new IntersectionObserver((entries) => {
@@ -86,10 +87,10 @@ const observer = new IntersectionObserver((entries) => {
             github_logo.classList.add("visible")
             linkedin_logo.classList.add("visible")
             info_aboutme1.classList.add("visible")
-
+            
             info_aboutme2.classList.add("visible")
             mis_intereses_title.classList.add("topVisible")
-
+            
         }else{
             info_aboutme1.classList.remove("visible")
             info_aboutme2.classList.remove("visible")
@@ -108,19 +109,27 @@ observer.observe(section_aboutme)
 
 
 //Observer section tecnology
+const icons = document.querySelectorAll('.ico')
 const section_tecnology = document.querySelector(".section.tecnology")
 const observer2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-      
+            
             title_tecnology_container.classList.add("topVisible2")
+            
+            icons.forEach((icon, i)=>{
+                setTimeout(()=>{
+                    icon.classList.add('visibleIco')
+                },i * 200)
+            })
 
         }else{
-      
+            
             title_tecnology_container.classList.remove("topVisible2")
+            icons.forEach((icon => icon.classList.remove('visibleIco')))
         }
     })
-}, {
-    threshold: 0.5   // el % de visibilidad necesario
-})
+}, {threshold: 0.2})
+
+
 observer2.observe(section_tecnology)
