@@ -102,7 +102,6 @@ const observer = new IntersectionObserver((entries) => {
 }, {
     threshold: 0.5 // el % de visibilidad necesario
 })
-observer.observe(profile_pic)
 observer.observe(section_aboutme)
 
 //END
