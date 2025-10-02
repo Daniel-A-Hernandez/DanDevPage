@@ -69,34 +69,32 @@ window.addEventListener('scroll', ()=>{
 //END
 
 //Transitions animation main content
-const info_aboutme1 = document.querySelector('.info-aboutme1')
+const info_aboutme1 = document.querySelector('.info1')
 const mis_intereses_title = document.querySelector('.mis-intereses-title')
-const info_aboutme2 = document.querySelector('.info-aboutme2')
-const github_logo = document.querySelector('.github')
-const linkedin_logo = document.querySelector('.linkedin')
+const info_aboutme2 = document.querySelector('.info2')
+
 const profile_pic = document.querySelector('.profile-pic')
 const title_tecnology_container = document.querySelector('.title-tecnology-container')
 
 
 //Observer section aboutme
 const section_aboutme = document.querySelector(".section.aboutme")
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             profile_pic.classList.add("move-left")
-            github_logo.classList.add("visible")
-            linkedin_logo.classList.add("visible")
-            info_aboutme1.classList.add("visible")
-            
+            info_aboutme1.classList.add("info1-visible")     
             info_aboutme2.classList.add("visible")
             mis_intereses_title.classList.add("topVisible")
+
             
         }else{
-            info_aboutme1.classList.remove("visible")
-            info_aboutme2.classList.remove("visible")
-            github_logo.classList.remove("visible")
-            linkedin_logo.classList.remove("visible")
             profile_pic.classList.remove("move-left")
+            info_aboutme1.classList.remove("info1-visible")
+
+            info_aboutme2.classList.remove("visible")
+            
             mis_intereses_title.classList.remove("topVisible")
         }
     })

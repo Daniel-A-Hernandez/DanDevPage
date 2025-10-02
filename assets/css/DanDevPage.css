@@ -200,84 +200,94 @@ body{
     background-color: var(--bgPrincipal);
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: flex-start;
     padding-top: 5%;
 }
+.sobre-mi-devop-container{
+    width: 100vw;
+    height: 5vh;
+}
 .sobre-mi,.develop{
-    position: relative;
+    position: absolute;
     margin: 0;
+    width: 100vw;
     font-family: var(--fontTitle);
     color: var(--txtColorClaro);
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
+    height: 5vh;
     
 }
 .develop{
-    position: absolute;
     opacity: 0;
 }
-.profile-info{
-    position: relative;
+.container-pic-aboutme1{
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 30vh;
-    gap: 2rem;
+    flex-direction: row;
 }
-
-.profile-pic{
+.profile-pic-container{
+    width: 40vw;
+    height: 30vh;
     position: relative;
-    margin-top:10%;
+    z-index: 1; 
+    
+    
+}
+.profile-pic{
     width: 15vh;
     height: auto;
+    margin-top: 10vw;
     transition: transform 1s ease-out;
-    transform: translateX(0);
+    transform: translateX(35vw);
     box-shadow: 0.375rem 0.4375rem 0 var(--colorPrimario);
+    z-index: 1; 
 }
-.profile-pic.move-left {
-    transform: translateX(-33vw); /* ajusta el valor */
+.profile-pic.move-left{
+    transform: translateX(2vw);  
 }
-.info-aboutme1{
-    color: var(--txtColorClaro);
-    font-family: var(--fontText);
-    line-height: 2rem;
-    position: relative;
-    top: -25vh;
-    font-size: 1.2rem;
-    text-align:justify;
+.info-aboutme1-container{
     width: 60vw;
-    margin-right:-35vw;
-    opacity: 0;
-    transition: opacity .5s ease-out;   
-   
- }
-
-.info-aboutme1.visible{opacity: 1;}
-
-.links-contact{
+    height: 30vh;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.5;
+    color:var(--txtColorClaro);
+    font-family: var(--fontText);
     display: flex;
-    width: 95vw;
-    gap: 10vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+.info1{
+    margin-right: 2vw;
+    opacity: 0;
+    transition: opacity 1s ease-out;   
+    
 }
 
-.logo, a {
-    width: 4vh;
-    margin-top: -0.5vh;
-    margin-left: 0.5vw;
-    transition: opacity 3.5s ease-in-out;   
+.info1.info1-visible{
+    opacity:1;
 }
-.logo{
-    opacity: 1;
+
+.icons-social-media-container{
+    width: 35vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:5% ;
+    gap:10vw;
 }
-.logo.github.visible{opacity: 1;}
-.logo.linkedin.visible{opacity: 1;}
+.ico-aboutme{
+    width: 8vw;
+    height: auto;
+}
 
 .mis-intereses-container{
     width: 100vw;
-    height: 60vh;
+    height: 63vh;
+    width: 100vw;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -285,12 +295,11 @@ body{
     margin-top: 5vh;
     font-family: var(--fontTitle);
     color: var(--txtColorClaro);
-    
 }
 .mis-intereses-title{
     font-weight: 900;
     width: 60vw;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 3vh;
     margin-right: 80vh;
     height: 20vw;
@@ -302,26 +311,25 @@ body{
     transition: opcity 3s ease-in-out;
     transition: transform 1s ease-out;
     transform: translateX(0);
-    
 }
 .mis-intereses-title.topVisible{
     transform: translateX(40vh);
     
-} 
-.info-aboutme2{
+}
+.info2{
     font-family: var(--fontText);
     width: 90vw;
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2;
     opacity: 0;
     transition: opacity 1.5s ease-out;   
 
 }
-.info-aboutme2.visible{
+
+.info2.visible{
    opacity: 1;
 }
-
 /*About me section End*/
 
 
@@ -353,7 +361,7 @@ body{
     width: 60vw;
     height: 10vh;
     box-shadow: 0.375rem 0.4375rem 0 var(--colorSecundario);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight:900;
     display: flex;
     align-items: center;
@@ -364,8 +372,6 @@ body{
     opacity:1;
 
 }
-
-
 
 .ico{
     width: 12vw;
