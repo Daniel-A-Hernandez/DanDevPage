@@ -417,6 +417,17 @@ body{
 /*Skills section End*/
 
 .proyects{
-    background-color: var(--colorSecundario);
+    background-color: var(--bgPrincipal);
 }
 
+@media (min-width: 400px) {
+
+    .mis-intereses-title, .tecnology-title{
+        font-size: 2rem;
+
+    }
+    .info1, .info2{
+        font-size: 1.2rem;
+    }
+    
+}
