@@ -279,7 +279,7 @@ body{
     margin-top:5% ;
     gap:10vw;
 }
-.ico-aboutme{
+.ico-aboutme, a{
     width: 8vw;
     height: auto;
 }
