@@ -431,3 +431,68 @@ body{
     }
     
 }
+
+@media (min-width:700px){
+    .dan,.dev{
+        font-size: 7rem;
+        letter-spacing: 1.5rem;
+    }
+    .code,.by_daniel{
+        font-size: 4rem ;
+    }
+    .arrowDown{
+        margin-top: 50vh;
+        width: 20vw;
+    }
+
+    .head{
+        font-size: 1rem;
+    }
+    .mainText{
+        font-size: 2.5rem;
+    }
+    .sobre-mi,.develop{
+        font-size: 3rem;
+    }
+  
+    .info1, .info2{
+        font-size: 1.7rem;
+    }
+    .info1{
+        margin-top: 15vh;
+
+    }
+    .profile-pic{
+        width: 25vw;
+        height: auto;
+        margin-top: 9vh;
+    }
+    .profile-pic-container{
+        transform: translateX(1vw);
+        height: 40vh;
+    }
+    .profile-pic.move-left{
+    transform: translateX(5vw);  
+    }
+    .mis-intereses-title,.tecnology-title{
+        width: 60vw;
+        height: 10vh;
+        font-size: 2rem;
+    }
+    .mis-intereses-container{
+        margin-top:2vh ;
+
+    }
+    .ico-aboutme, a{
+        width: 6vw;
+        height: auto;
+    }
+    .lenguajes, .devop-tecnology, .tools-and-systems{
+        height: 22vh;
+        font-size: 1.5rem;
+    }
+    .ico{
+        width: 10vw;
+
+    }
+}
